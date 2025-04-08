@@ -1,0 +1,48 @@
+<h2 style="text-align: center;">User Management</h2>
+
+
+<div class="user-container">
+    <div class="table-section">
+        <h2>Table Working</h2>
+
+        <div class="card card-custom gutter-b">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="primeng-datatable-container">
+                        <p-table [value]="users" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>ID</th>
+                                    <th style="text-align: center;">User Id</th>
+                                    <th>Title</th>
+                                    <th>Discription</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-user>
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td style="text-align: center;">{{ user.userId }}</td>
+                                    <td>{{ truncateTitle(user.title) }}</td> 
+                                    <td>{{ truncateTitle(user.body) }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-custom gutter-b">
+        <div class="card-body">
+            <h2>Pipe Directive</h2>
+            <p>{{formattedDate}}</p>
+        </div>
+    </div>
+
+    <div class="card card-custom gutter-b">
+        <div class="card-body">
+            <button class="btn btn-danger" (click)="logout()">Logout</button> 
+        </div>
+    </div>
+</div>

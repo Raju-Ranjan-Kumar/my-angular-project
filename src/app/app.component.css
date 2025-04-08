@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  margin-left: 260px; /* Sidebar space */
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  background-color: #f4f4f4;
+  padding: 20px;
+  overflow-y: auto; /* Scroll for content if needed */
+}
+.btn-cant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid skyblue;
+  background-color: darkseagreen;
+}

@@ -1,0 +1,23 @@
+<nav class="sidebar">
+  <ul>
+    <li *ngFor="let item of menuItems; let i = index">
+      <div class="menu-item" (click)="item.children ? toggle(i) : null">
+        <i *ngIf="item.icon" class="{{ item.icon }}"></i>
+        <a *ngIf="!item.children" [routerLink]="item.route">{{ item.label }}</a>
+        <span *ngIf="item.children">{{ item.label }}</span>
+        <i
+          *ngIf="item.children"
+          class="fas fa-chevron-down toggle-icon"
+          [class.rotated]="activeIndex === i"
+        ></i>
+      </div>
+
+      <!-- Submenu -->
+      <ul class="submenu" *ngIf="item.children && activeIndex === i">
+        <li *ngFor="let child of item.children">
+          <a [routerLink]="child.route">{{ child.label }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
